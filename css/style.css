@@ -6,13 +6,13 @@
 }
 
 body {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: white;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+   height:100vh;
+    width:100%;
+    background:url("../background.jpeg") center/cover no-repeat;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;}
 
 .hidden {
   display: none;
@@ -23,11 +23,11 @@ body {
 #session,
 #cheer {
   width: 500px;
-  max-width: 90%;
+  max-width: 80%;
   padding: 40px;
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
   box-shadow: 0 0 30px rgba(0,0,0,0.4);
   text-align: center;
   animation: fadeIn 0.5s ease;
@@ -46,7 +46,7 @@ h2 {
 h3 {
   font-size: 40px;
   margin: 20px 0;
-  color: #00ffd5;
+  color: #d0ca13;
 }
 
 p {
@@ -55,19 +55,20 @@ p {
 }
 
 button {
-  background: #00ffd5;
-  border: none;
-  padding: 12px 25px;
-  margin: 10px;
-  border-radius: 30px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
+  width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:6px;
+    background:rgba(247,176,124,1);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
 button:hover {
-  background: #00bfa6;
+  background: #bf9109;
   transform: scale(1.05);
 }
 
@@ -78,7 +79,7 @@ button:hover {
 #video {
   margin-top: 20px;
   border-radius: 15px;
-  border: 3px solid #00ffd5;
+  border: 3px solid #efde25;
 }
 
 #status {
@@ -95,7 +96,7 @@ button:hover {
 #rewardText {
   font-size: 22px;
   margin-top: 20px;
-  color: #00ffd5;
+  color: #c8bd1e;
 }
 
 @keyframes fadeIn {
