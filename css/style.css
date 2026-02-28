@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#dashboard,
+#timerSelect,
+#session,
+#cheer {
+  width: 500px;
+  max-width: 90%;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 40px;
+  margin: 20px 0;
+  color: #00ffd5;
+}
+
+p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+button {
+  background: #00ffd5;
+  border: none;
+  padding: 12px 25px;
+  margin: 10px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #00bfa6;
+  transform: scale(1.05);
+}
+
+.preset {
+  width: 100px;
+}
+
+#video {
+  margin-top: 20px;
+  border-radius: 15px;
+  border: 3px solid #00ffd5;
+}
+
+#status {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#distractionCount,
+#tabCount {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+#rewardText {
+  font-size: 22px;
+  margin-top: 20px;
+  color: #00ffd5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
