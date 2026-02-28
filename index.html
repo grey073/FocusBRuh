@@ -1,47 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>FocusGuard Pro</title>
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>FocusBruh</title>
 
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_detection/face_detection.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+<link rel="stylesheet" href="css/style.css">
+
 </head>
-<body>
 
-<div id="dashboard">
-  <h1>FocusGuard Pro</h1>
-  <p>🔥 Streak: <span id="streakDisplay">0</span></p>
-  <button id="startBtn">Start Session</button>
+<body onclick="goToLogin()">
+
+<!-- LEFT MENU ICON -->
+<div class="menu">
+    <div class="grid">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </div>
 
-<div id="timerSelect" class="hidden">
-    <input type="number" id="customMinutes" placeholder="Custom Minutes" min="1">
-<button id="customStart">Start Custom</button>
-  <h2>Select Time</h2>
-  <button class="preset" data-time="25">25 Min</button>
-  <button class="preset" data-time="45">45 Min</button>
-  <button class="preset" data-time="60">60 Min</button>
+<!-- MAIN SCREEN -->
+<div class="hero">
+
+    <!-- CENTER LOGO -->
+    <img src="Logo.png" class="logo">
+
 </div>
 
-<div id="session" class="hidden">
-  <h2 id="status">Focused</h2>
-  <h3 id="timerDisplay">00:00</h3>
-  <p>Distractions: <span id="distractionCount">0</span></p>
-  <p>Tab Switches: <span id="tabCount">0</span></p>
-  <video id="video" width="400" height="300" autoplay muted></video>
-</div>
-
-<div id="cheer" class="hidden">
-  <h1>🎉 Session Complete!</h1>
-  <p id="rewardText"></p>
-  <button id="homeBtn">Back</button>
-</div>
-
-<script src="js/ui.js"></script>
-<script src="js/timer.js"></script>
-<script src="js/detection.js"></script>
-<script src="js/main.js"></script>
+<!-- TRANSITION SCRIPT -->
+<script src="js/transition.js"></script>
 
 </body>
 </html>
