@@ -26,3 +26,21 @@ function finishSession() {
 
   showCheerScreen(reward);
 }
+document.querySelectorAll(".breakPreset").forEach(btn => {
+  btn.onclick = () => {
+    const breakTime = parseInt(btn.dataset.time);
+    breakSelect.classList.add("hidden");
+    startBreakTimer(breakTime);
+  };
+});
+breakBtn.onclick = () => {
+  if (!inBreak) breakSelect.classList.remove("hidden");
+};
+
+document.querySelectorAll(".breakPreset").forEach(btn => {
+  btn.onclick = () => {
+    const breakTime = parseInt(btn.dataset.time);
+    breakSelect.classList.add("hidden");
+    startBreakTimer(breakTime);
+  };
+});

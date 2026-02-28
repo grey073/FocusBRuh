@@ -2,6 +2,18 @@ const dashboard = document.getElementById("dashboard");
 const timerSelect = document.getElementById("timerSelect");
 const session = document.getElementById("session");
 const cheer = document.getElementById("cheer");
+const breakBtn = document.getElementById("breakBtn");
+const breakSelect = document.getElementById("breakSelect");
+
+breakBtn.onclick = () => {
+  breakSelect.classList.remove("hidden");
+};
+
+
+function showSessionScreenAfterBreak() {
+  breakSelect.classList.add("hidden");
+  document.getElementById("status").innerText = "Focused";
+}
 
 document.getElementById("customStart").onclick = function () {
 
@@ -44,3 +56,12 @@ function showCheerScreen(reward) {
   cheer.classList.remove("hidden");
   document.getElementById("rewardText").innerText = reward;
 }
+breakBtn.onclick = () => breakSelect.classList.remove("hidden");
+
+document.querySelectorAll(".breakPreset").forEach(btn => {
+  btn.onclick = () => {
+    const breakTime = parseInt(btn.dataset.time);
+    breakSelect.classList.add("hidden");
+    startBreakTimer(breakTime);
+  };
+});

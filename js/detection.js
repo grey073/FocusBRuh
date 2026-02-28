@@ -46,9 +46,7 @@ function startCamera() {
       lastX = currentX;
 
       // Only show "Focused" if not in cooldown
-      if (!cooldownActive) {
-        document.getElementById("status").innerText = "Focused";
-      }
+     
     }
   });
 
@@ -127,4 +125,65 @@ function startFocusSession(minutes) {
   showSessionScreen();
   startTimer(minutes);
   startCamera();
+}
+if (!cooldownActive && !inBreak) {
+  document.getElementById("status").innerText = "Focused";
+}
+ breakInterval = null;
+
+function startBreakTimer(minutes) {
+  pauseTimer();  // pause study timer
+  inBreak = true;
+
+  const breakProgressContainer = document.getElementById("breakProgressContainer");
+  const breakProgress = document.getElementById("breakProgress");
+  breakProgressContainer.classList.remove("hidden");
+  breakProgress.style.width = "0%";
+
+  let totalBreakSeconds = minutes * 60;
+
+  breakInterval = setInterval(() => {
+    totalBreakSeconds--;
+
+    const min = Math.floor(totalBreakSeconds / 60);
+    const sec = totalBreakSeconds % 60;
+
+    // Update status text for break
+    document.getElementById("status").innerText = `🛌 Break: ${String(min).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+
+    // Update progress bar
+    breakProgress.style.width = ((minutes*60 - totalBreakSeconds) / (minutes*60)) * 100 + "%";
+
+    if (totalBreakSeconds <= 0) {
+      clearInterval(breakInterval);
+      breakInterval = null;
+      inBreak = false;
+      breakProgressContainer.classList.add("hidden");
+      resumeTimer(); // resume study timer
+      document.getElementById("status").innerText = "Focused";
+    }
+  }, 1000);
+  faceDetection.onResults(results => {
+  if (results.detections.length === 0) {
+    missingTime++;
+    if (missingTime > 8) triggerDistraction();
+  } else {
+    missingTime = 0;
+
+    const box = results.detections[0].boundingBox;
+    const currentX = box.xCenter;
+
+    if (lastX !== null) {
+      motionLevel = Math.abs(currentX - lastX);
+      if (motionLevel > 0.15) triggerDistraction();
+    }
+
+    lastX = currentX;
+
+    // Only update status if not in break or cooldown
+    if (!cooldownActive && !inBreak) {
+      document.getElementById("status").innerText = "Focused";
+    }
+  }
+});
 }

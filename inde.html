@@ -27,9 +27,24 @@
 <div id="session" class="hidden">
   <h2 id="status">Focused</h2>
   <h3 id="timerDisplay">00:00</h3>
+  <!-- Break Progress Bar -->
+<div id="breakProgressContainer" class="hidden" style="width: 100%; background: #ddd; height: 12px; margin-top: 10px; border-radius: 6px;">
+  <div id="breakProgress" style="height: 100%; width: 0%; background: #4caf50; border-radius: 6px;"></div>
+</div>
   <p>Distractions: <span id="distractionCount">0</span></p>
   <p>Tab Switches: <span id="tabCount">0</span></p>
   <video id="video" width="400" height="300" autoplay muted></video>
+  <button id="breakBtn">Take a Break</button>
+     <button id="homeBtn">Stop</button>
+
+
+
+<div id="breakSelect" class="hidden">
+  <h3>Select Break Time</h3>
+  <button class="breakPreset" data-time="5">5 Min</button>
+  <button class="breakPreset" data-time="10">10 Min</button>
+  <button class="breakPreset" data-time="15">15 Min</button>
+</div>
 </div>
 
 <div id="cheer" class="hidden">
